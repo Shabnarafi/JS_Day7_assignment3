@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Text field</title>
+        <meta charset="UTF-8">
+        <script type="text/javascript">
+            window.onload = function(){
+                document.formex.numberinput.onkeyup = checkIfNumber;
+                function checkIfNumber(){
+                     if (isNaN(document.formex.numberinput.value)){
+						setTimeout(function(){            
+                           document.formex.numberinput.readOnly = true;
+                        }, 1000);
+                        
+					}
+					else
+					{
+                        
+						document.formex.numberinput.innerHTML = document.formex.numberinput.value;
+                        document.formex.numberinput.readOnly = false;
+                      }
+                 
+            }
+		}
+        </script>
+        <style type="text/css">
+                input[readonly] {
+                   background-color: red;
+                }
+        </style>
+    </head>
+    <body>
+        <form name="formex">
+            <input type="text" name="numberinput">
+        </form>
+    </body>
+</html>
